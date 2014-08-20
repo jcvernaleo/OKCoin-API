@@ -33,7 +33,7 @@ Getting Started
   
         T = okcoin.TradeAPI(partner, secret_key)
   
-        print( T.getinfo() )
+        print( T.get_info() )
   
 
 Request Structure
