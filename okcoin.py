@@ -128,6 +128,15 @@ class TradeAPI(MarketData):
         get_order_url = 'https://www.okcoin.com/api/getorder.do'
         return(self._post(params, get_order_url))
 
+    def get_order_history(self, symbol, status, currentPage, pageLength):
+        params = { 'partner' : self.partner,
+                   'symbol' : symbol,
+                   'status' : status,
+                   'currentPage' : currentPage,
+                   'pageLength' : pageLength}
+        get_order_history_url = 'https://www.okcoin.com/api/getOrderHistory.do'
+        return(self._post(params, get_order_history_url))
+
     def error_code_meaning(self, error_code):
         codes = { 10000 : 'Required parameter can not be null',
                   10001 : 'Requests are too frequent',
